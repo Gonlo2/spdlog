@@ -136,37 +136,49 @@ inline void log(level::level_enum lvl, string_view_t fmt, const Args &... args)
 template<typename... Args>
 inline void trace(string_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_TRACE
     default_logger_raw()->trace(fmt, args...);
+#endif
 }
 
 template<typename... Args>
 inline void debug(string_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_DEBUG
     default_logger_raw()->debug(fmt, args...);
+#endif
 }
 
 template<typename... Args>
 inline void info(string_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_INFO
     default_logger_raw()->info(fmt, args...);
+#endif
 }
 
 template<typename... Args>
 inline void warn(string_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_WARN
     default_logger_raw()->warn(fmt, args...);
+#endif
 }
 
 template<typename... Args>
 inline void error(string_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_ERROR
     default_logger_raw()->error(fmt, args...);
+#endif
 }
 
 template<typename... Args>
 inline void critical(string_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_CRITICAL
     default_logger_raw()->critical(fmt, args...);
+#endif
 }
 
 template<typename T>
@@ -184,37 +196,49 @@ inline void log(level::level_enum lvl, const T &msg)
 template<typename T>
 inline void trace(const T &msg)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_TRACE
     default_logger_raw()->trace(msg);
+#endif
 }
 
 template<typename T>
 inline void debug(const T &msg)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_DEBUG
     default_logger_raw()->debug(msg);
+#endif
 }
 
 template<typename T>
 inline void info(const T &msg)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_INFO
     default_logger_raw()->info(msg);
+#endif
 }
 
 template<typename T>
 inline void warn(const T &msg)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_WARN
     default_logger_raw()->warn(msg);
+#endif
 }
 
 template<typename T>
 inline void error(const T &msg)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_ERROR
     default_logger_raw()->error(msg);
+#endif
 }
 
 template<typename T>
 inline void critical(const T &msg)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_CRITICAL
     default_logger_raw()->critical(msg);
+#endif
 }
 
 #ifdef SPDLOG_WCHAR_TO_UTF8_SUPPORT
@@ -233,37 +257,49 @@ inline void log(level::level_enum lvl, wstring_view_t fmt, const Args &... args)
 template<typename... Args>
 inline void trace(wstring_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_TRACE
     default_logger_raw()->trace(fmt, args...);
+#endif
 }
 
 template<typename... Args>
 inline void debug(wstring_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_DEBUG
     default_logger_raw()->debug(fmt, args...);
+#endif
 }
 
 template<typename... Args>
 inline void info(wstring_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_INFO
     default_logger_raw()->info(fmt, args...);
+#endif
 }
 
 template<typename... Args>
 inline void warn(wstring_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_WARN
     default_logger_raw()->warn(fmt, args...);
+#endif
 }
 
 template<typename... Args>
 inline void error(wstring_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_ERROR
     default_logger_raw()->error(fmt, args...);
+#endif
 }
 
 template<typename... Args>
 inline void critical(wstring_view_t fmt, const Args &... args)
 {
+#if SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_CRITICAL
     default_logger_raw()->critical(fmt, args...);
+#endif
 }
 
 #endif // SPDLOG_WCHAR_TO_UTF8_SUPPORT
